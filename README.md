@@ -67,3 +67,9 @@
 
 # Testing Example (Postman)
 - Use Postman and import OrderAPI.postman_collection.json to view the API documentation.
+
+# Postman Image
+![Example Image](./postman.png)
+
+# Docker Image
+![Example Image](./docker.png)
