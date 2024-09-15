@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "16b5197e-55d7-4125-bd4d-792eafa04fe5",
+		"name": "OrderService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6104869"
+	},
+	"item": [
+		{
+			"name": "Create Orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday Inn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"60\",\n    \"currency\": \"USD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Orders Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday Inn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"50\",\n    \"currency\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 08:54:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"address\": {\n            \"city\": \"taipei-city\",\n            \"district\": \"da-an-district\",\n            \"street\": \"fuxing-south-road\"\n        },\n        \"currency\": \"TWD\",\n        \"name\": \"Melody Holiday Inn\",\n        \"order_id\": \"A0000001\",\n        \"price\": \"1550\"\n    },\n    \"reason\": \"\"\n}"
+				},
+				{
+					"name": "contains non-English",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday-nn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"50\",\n    \"currency\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 08:54:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"reason\": \"Name contains non-English characters.\"\n}"
+				},
+				{
+					"name": "not capitalized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday nn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"50\",\n    \"currency\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 08:55:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"reason\": \"Name is not capitalized.\"\n}"
+				},
+				{
+					"name": "Price is over TWD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday Inn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"2050\",\n    \"currency\": \"TWD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 08:55:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"reason\": \"Price is over 2000\"\n}"
+				},
+				{
+					"name": "Price is over USD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"name\": \"Melody Holiday Inn\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"70\",\n    \"currency\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 08:56:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"reason\": \"Price is over 2000\"\n}"
+				},
+				{
+					"name": "missing parameter",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"A0000001\",\n    \"address\": {\n        \"city\": \"taipei-city\",\n        \"district\": \"da-an-district\",\n        \"street\": \"fuxing-south-road\"\n    },\n    \"price\": \"60\",\n    \"currency\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/orders",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.4 Python/3.8.20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 09:14:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {},\n    \"reason\": \"Missing field: name\"\n}"
+				}
+			]
+		}
+	]
+}
